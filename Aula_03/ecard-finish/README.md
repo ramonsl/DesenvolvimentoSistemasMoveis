@@ -1,8 +1,6 @@
-<p align="center">
-  <img width="800" height="200" src="https://github.com/polimorfismo/assets-curso-flutter-e-dart/blob/main/imagens/banner_polimorfismo.png">
-</p>
 
-# MyCard
+
+# ECard
 
 ## Objetivo
 
@@ -23,6 +21,3 @@ O app MyCard é um cartão de visita pessoal. Você pode mostrá-lo a qualquer p
 * Como personalizar os widgets de Texto.
 * Como ler e entender a documentação do Flutter
 
-
-
->O curso completo pode ser encontrado gratuitamente no nosso canal do YouTube [Polimorfismo](https://youtube.com/channel/UCN0xtkhf8j2R6n1xKYCiJBA/).
