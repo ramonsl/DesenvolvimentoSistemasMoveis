@@ -6,10 +6,6 @@
 
 Agora que você viu como criar um aplicativo Flutter completamente do zero nós vamos aprender mais sobre como projetar a interface de usuário.
 
-## O que nós iremos criar?
-
-O app MyCard é um cartão de visita pessoal. Você pode mostrá-lo a qualquer pessoa e pode também falar para as pessoas baixarem ele na loja de aplicativos.
-
 ## O que nós iremos aprender?
 
 * Como criar widgets Stateless.
