@@ -1,8 +1,4 @@
-#Alunos
-- Lucas Bins Braga
-- Felipe de Mello Schneider
 
-# aula
 
 A new Flutter project.
 
