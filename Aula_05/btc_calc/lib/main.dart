@@ -23,11 +23,13 @@ class _HomeState extends State<Home> {
     limparTela();
   }
 
+//controles de telas
   void zerar() {
     _cotacaoController?.text = "";
     _valorController?.text = "";
   }
 
+//controles de telas
   void limparTela() {
     zerar();
     setState(() {
@@ -35,6 +37,7 @@ class _HomeState extends State<Home> {
     });
   }
 
+////aplicaçao
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,10 +50,11 @@ class _HomeState extends State<Home> {
     );
   }
 
+//appbar
   AppBar buildAppBar() {
     return AppBar(
       title: const Text('Converter'),
-      backgroundColor: Colors.yellow,
+      backgroundColor: Colors.amber,
       actions: <Widget>[
         IconButton(
           icon: const Icon(Icons.refresh),
@@ -62,6 +66,7 @@ class _HomeState extends State<Home> {
     );
   }
 
+//formulario (body)
   Form buildForm() {
     return Form(
       key: _key,
@@ -83,6 +88,8 @@ class _HomeState extends State<Home> {
     );
   }
 
+//widgets para uso no formulrio
+  ///inclusiver EXtrair isso para um buildTextFormField.dart
   Widget buildTextFormField(
       {TextEditingController? controller, String? label, String? error}) {
     return TextFormField(
@@ -98,13 +105,17 @@ class _HomeState extends State<Home> {
       },
     );
   }
+//widgets para exibir a mensagem
+  ///inclusiver EXtrair isso para um buildTextresult.dart
 
   Widget buildTextresult() {
     return Padding(
-        padding: EdgeInsets.symmetric(vertical: 36.0),
+        padding: const EdgeInsets.symmetric(vertical: 36.0),
         child: Text(_resultado, textAlign: TextAlign.center));
   }
 
+//widgets para exibir a mensagem
+  ///inclusiver EXtrair isso para um buildCalcularBotao.dart
   Widget buildCalcularBotao() {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 36.0),
@@ -118,11 +129,12 @@ class _HomeState extends State<Home> {
     );
   }
 
+  ///metodo para atlerar ststus
   void calcular() {
     Bitcoin btc = Bitcoin();
     btc.cotacao = double.parse(_cotacaoController!.text);
     btc.valor = double.parse(_valorController!.text);
-    zerar();
+    limparTela();
     setState(() {
       _resultado = btc.calcular();
     });
