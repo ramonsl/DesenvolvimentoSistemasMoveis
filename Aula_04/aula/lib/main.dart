@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'pagina_inicial.dart';
 
 void main() {
   runApp(const MyApp());
 }
-
-
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -102,35 +99,39 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: TextField(
                   decoration: InputDecoration(
                     border: const OutlineInputBorder(),
-                    suffixIcon: Icon(
-                      Icons.person_outline,
-                      color: Colors.grey[400]
-                    ),
+                    suffixIcon:
+                        Icon(Icons.person_outline, color: Colors.grey[400]),
                     focusColor: Colors.grey[300],
-                    labelText: "Digite seu email @rede",labelStyle: const TextStyle(fontSize: 12),
+                    labelText: "Digite seu email @rede",
+                    labelStyle: const TextStyle(fontSize: 12),
                   ),
                 ),
               ),
               const Padding(padding: EdgeInsets.only(top: 10)),
               SizedBox(
-                  width: 300,
-                  height: 50,
-                  child: ElevatedButton(
-                    child:Row(
-                      children:[
-                      Text("Proximo",style: TextStyle(color: Colors.grey[700]),),
-                      Icon(Icons.arrow_forward, color: Colors.grey[700],),
-
-                      ],),
-                      onPressed: (){
-                         Navigator.push(context, 
-                         MaterialPageRoute(builder: (context) => PaginaInicial())
-                         ) ;
-                      },
-                     ),
-                 
+                width: 300,
+                height: 50,
+                child: ElevatedButton(
+                  child: Row(
+                    children: [
+                      Text(
+                        "Proximo",
+                        style: TextStyle(color: Colors.grey[700]),
+                      ),
+                      Icon(
+                        Icons.arrow_forward,
+                        color: Colors.grey[700],
+                      ),
+                    ],
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PaginaInicial()));
+                  },
+                ),
               )
-
             ],
           )
         ],

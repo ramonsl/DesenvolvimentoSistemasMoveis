@@ -19,14 +19,16 @@ class LoadButton extends StatelessWidget {
     return busy
         ? Container(
             alignment: Alignment.center,
-            height: 50,
+            height: 100,
+            width: double.infinity,
             child: const CircularProgressIndicator(
               backgroundColor: Colors.white,
             ),
           )
         : Container(
-            margin: const EdgeInsets.all(24),
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+            width: double.infinity,
+            margin: const EdgeInsets.all(18),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(30)),
             child: ElevatedButton(
               onPressed: func,
               child: Text(
@@ -35,8 +37,9 @@ class LoadButton extends StatelessWidget {
                     const TextStyle(color: Colors.white, fontFamily: "Bangers"),
               ),
               style: ElevatedButton.styleFrom(
-                primary: invert ? Colors.amberAccent : Colors.blueGrey,
-                onSurface: Colors.red,
+                primary: invert
+                    ? Color.fromARGB(255, 150, 120, 10)
+                    : Color.fromARGB(255, 46, 38, 8),
               ),
             ),
           );

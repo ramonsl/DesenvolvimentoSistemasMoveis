@@ -3,25 +3,26 @@ import 'package:flutter/material.dart';
 import 'LoadButton.widget.dart';
 
 class Success extends StatelessWidget {
-  final result;
+  final String? result;
   final VoidCallback reset;
 
-  const Success({Key? key, this.result = "MSG", required this.reset})
+  const Success({Key? key, this.result = "", required this.reset})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.8),
+        borderRadius: BorderRadius.circular(30),
+        color: Colors.white.withOpacity(0.9),
       ),
       child: Column(children: [
         const SizedBox(
           height: 50,
         ),
         Text(
-          result,
+          result!,
           style: TextStyle(
               color: Theme.of(context).primaryColor,
               fontFamily: "Bangers",
@@ -30,8 +31,8 @@ class Success extends StatelessWidget {
         LoadButton(
           func: () => reset(), //reset
           busy: false,
-          invert: false,
-          texto: "Calcular",
+          invert: true,
+          texto: "Novo Calculo",
         ),
       ]),
     );
