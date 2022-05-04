@@ -3,8 +3,8 @@ import 'LoadButton.widget.dart';
 import 'package:app_fuel/widgets/input.widget.dart';
 
 class SubmitForm extends StatelessWidget {
-  var gasCrtl = new TextEditingController();
-  var alcCrtl = new TextEditingController();
+  var gasCrtl = TextEditingController();
+  var alcCrtl = TextEditingController();
   var busy = false;
   final VoidCallback submitFunc;
 
@@ -26,7 +26,7 @@ class SubmitForm extends StatelessWidget {
           func: submitFunc,
           busy: false,
           invert: false,
-          campo: "Calcular",
+          texto: "Calcular",
         ),
       ],
     );

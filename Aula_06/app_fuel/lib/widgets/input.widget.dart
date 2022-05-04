@@ -3,11 +3,10 @@ import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class Input extends StatelessWidget {
   var label = "";
-  var crtl = new TextEditingController();
-  var masked = new MaskTextInputFormatter(mask: "##,###");
+  var crtl = TextEditingController();
+  var masked = MaskTextInputFormatter(mask: "#,###");
 
-  Input(@required this.label, @required this.crtl, {Key? key})
-      : super(key: key);
+  Input(this.label, this.crtl, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +17,7 @@ class Input extends StatelessWidget {
           Container(
             child: Text(
               label,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 22,
                 fontFamily: "Bangers",
@@ -27,7 +26,7 @@ class Input extends StatelessWidget {
             width: 80,
             alignment: Alignment.centerRight,
           ),
-          SizedBox(
+          const SizedBox(
             width: 20,
           ),
           Expanded(
@@ -36,7 +35,7 @@ class Input extends StatelessWidget {
               child: TextFormField(
                 inputFormatters: [masked],
                 controller: crtl,
-                style: TextStyle(color: Colors.white, fontSize: 24),
+                style: const TextStyle(color: Colors.white, fontSize: 24),
                 decoration: const InputDecoration(
                     labelText: "Digite o valor",
                     prefixIcon: Icon(

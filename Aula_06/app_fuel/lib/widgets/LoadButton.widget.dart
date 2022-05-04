@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 
 class LoadButton extends StatelessWidget {
   final VoidCallback func;
-  final String campo;
+  final String texto;
   final bool busy;
   final bool invert;
 
-  LoadButton(
+  const LoadButton(
       {Key? key,
       required this.busy,
       required this.invert,
-      this.campo = "Calcular",
+      this.texto = "Calcular",
       required this.func})
       : super(key: key);
 
@@ -20,18 +20,19 @@ class LoadButton extends StatelessWidget {
         ? Container(
             alignment: Alignment.center,
             height: 50,
-            child: CircularProgressIndicator(
+            child: const CircularProgressIndicator(
               backgroundColor: Colors.white,
             ),
           )
         : Container(
-            margin: EdgeInsets.all(24),
+            margin: const EdgeInsets.all(24),
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
             child: ElevatedButton(
-              onPressed: () => func,
+              onPressed: func,
               child: Text(
-                campo,
-                style: TextStyle(color: Colors.white, fontFamily: "Bangers"),
+                texto,
+                style:
+                    const TextStyle(color: Colors.white, fontFamily: "Bangers"),
               ),
               style: ElevatedButton.styleFrom(
                 primary: invert ? Colors.amberAccent : Colors.blueGrey,

@@ -6,8 +6,7 @@ class Success extends StatelessWidget {
   final result;
   final VoidCallback reset;
 
-  const Success(
-      {Key? key, this.result = "Abastecer com alool", required this.reset})
+  const Success({Key? key, this.result = "MSG", required this.reset})
       : super(key: key);
 
   @override
@@ -18,7 +17,7 @@ class Success extends StatelessWidget {
         color: Colors.white.withOpacity(0.8),
       ),
       child: Column(children: [
-        SizedBox(
+        const SizedBox(
           height: 50,
         ),
         Text(
@@ -29,12 +28,10 @@ class Success extends StatelessWidget {
               fontSize: 22),
         ),
         LoadButton(
-          func: () {
-            reset();
-          },
+          func: () => reset(), //reset
           busy: false,
           invert: false,
-          campo: "Calcular",
+          texto: "Calcular",
         ),
       ]),
     );
