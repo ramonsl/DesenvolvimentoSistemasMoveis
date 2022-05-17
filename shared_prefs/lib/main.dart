@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:path_provider/path_provider.dart';
 
 void main() => runApp(MyApp());
 
@@ -65,7 +68,7 @@ class MyHomePage extends StatelessWidget {
       ),
     );
   }
-
+/*
   _read() async {
     final prefs = await SharedPreferences.getInstance();
     const key = 'my_int_key';
@@ -79,5 +82,25 @@ class MyHomePage extends StatelessWidget {
     const value = 1000;
     prefs.setInt(key, value);
     print('saved $value');
+  }
+*/
+
+  _read() async {
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      final file = File('${directory.path}/my_file.txt');
+      String text = await file.readAsString();
+      print(text);
+    } catch (e) {
+      print("não foi possivel ler");
+    }
+  }
+
+  _save() async {
+    final directory = await getApplicationDocumentsDirectory();
+    final file = File('${directory.path}/my_file.txt');
+    final text = 'Flutter Files!';
+    await file.writeAsString(text);
+    print('saved');
   }
 }
